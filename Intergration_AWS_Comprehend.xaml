@@ -1,0 +1,436 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="amz" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="840,3280" sap2010:WorkflowViewState.IdRef="amz_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:a="clr-namespace:Amazon;assembly=AWSSDK.Core" xmlns:ac="clr-namespace:Amazon.ComprehendMedical;assembly=AWSSDK.ComprehendMedical" xmlns:acm="clr-namespace:Amazon.ComprehendMedical.Model;assembly=AWSSDK.ComprehendMedical" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:uaa="clr-namespace:UiPath.AmazonComprehend.Activities;assembly=UiPath.AmazonComprehend.Activities" xmlns:uaam="clr-namespace:UiPath.AmazonComprehend.Activities.Medical;assembly=UiPath.AmazonComprehend.Activities" xmlns:uam="clr-namespace:UiPath.AmazonComprehend.Models;assembly=UiPath.AmazonComprehend" xmlns:uas="clr-namespace:UiPath.AmazonComprehend.Services;assembly=UiPath.AmazonComprehend" xmlns:ubac="clr-namespace:UiPath.BAF.Activities.ContextModel;assembly=UiPath.AmazonComprehend.Activities" xmlns:ubme="clr-namespace:UiPath.BAF.Models.Entity;assembly=UiPath.AmazonComprehend" xmlns:ubt="clr-namespace:UiPath.BAF.Telemetry;assembly=UiPath.AmazonComprehend" xmlns:ucm="clr-namespace:UiPath.CodeGen.Model;assembly=UiPath.AmazonComprehend" xmlns:ucmc="clr-namespace:UiPath.CodeGen.Models.Connection;assembly=UiPath.AmazonComprehend" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="60">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.BAF.Enums</x:String>
+      <x:String>UiPath.Swagger.Models</x:String>
+      <x:String>UiPath.CodeGen.Models.Connection</x:String>
+      <x:String>UiPath.AmazonComprehend.Models</x:String>
+      <x:String>UiPath.BAF.Models.Connection</x:String>
+      <x:String>UiPath.BAF.Models.Connection.APIConnection</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.BAF.Telemetry</x:String>
+      <x:String>UiPath.BAF.Activities.ContextModel</x:String>
+      <x:String>UiPath.BAF.Models</x:String>
+      <x:String>UiPath.BAF.ServiceInterfaces</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.AmazonComprehend.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.CodeGen.Activities</x:String>
+      <x:String>UiPath.BAF.Activities</x:String>
+      <x:String>UiPath.Activities.Contracts</x:String>
+      <x:String>System.Net</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>Amazon</x:String>
+      <x:String>UiPath.BAF.Models.Entity</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.BAF.Properties</x:String>
+      <x:String>UiPath.BAF.Models.CrudOperation</x:String>
+      <x:String>UiPath.BAF.Models.Response</x:String>
+      <x:String>UiPath.AmazonComprehend.Activities.Medical</x:String>
+      <x:String>Amazon.ComprehendMedical.Model</x:String>
+      <x:String>Amazon.Runtime</x:String>
+      <x:String>UiPath.AmazonConnect.Activities.Models</x:String>
+      <x:String>UiPath.AmazonConnect.Activities</x:String>
+      <x:String>Amazon.Comprehend.Model</x:String>
+      <x:String>Amazon.ComprehendMedical</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.CSV</x:String>
+      <x:String>UiPath.CSV.Activities</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="37">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.AmazonComprehend</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.AmazonComprehend.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Activities.Contracts</AssemblyReference>
+      <AssemblyReference>AWSSDK.Core</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>AWSSDK.ComprehendMedical</AssemblyReference>
+      <AssemblyReference>UiPath.AmazonConnect.Activities</AssemblyReference>
+      <AssemblyReference>AWSSDK.Comprehend</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="AWS COMPREHEND INTEGRATION WITH UIPATH FOR HEALTHCARE" sap:VirtualizedContainerService.HintSize="650,3215" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="passwd" />
+      <Variable x:TypeArguments="ss:SecureString" Name="Password" />
+      <Variable x:TypeArguments="uam:AmazonComprehendConnection" Name="Connection" />
+      <Variable x:TypeArguments="x:String" Name="AccessKey" />
+      <Variable x:TypeArguments="a:RegionEndpoint" Name="Region" />
+      <Variable x:TypeArguments="s:String[]" Name="file_cases" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt" />
+      <Variable x:TypeArguments="x:String" Name="traitName" />
+      <Variable x:TypeArguments="x:String" Name="traitScore" />
+      <Variable x:TypeArguments="x:String" Name="id" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:GetPassword DisplayName="Get Password" sap:VirtualizedContainerService.HintSize="608,22" sap2010:WorkflowViewState.IdRef="GetPassword_1" ProtectedPassword="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAqER9FKtvXUOxQ3QWqEJZAwAAAAACAAAAAAAQZgAAAAEAACAAAADZ2SENqCvheysMrlPObjAfpqejM3MQWrwhfPgl5ru4ZAAAAAAOgAAAAAIAACAAAADfKLRCnaKzTBsk/E9nw1LjQZROTfVNjRRUUJ0nZ2IWWDAAAAAI1SHl7n/kTvw5pDlw9keC7Sit9n+XKWH8Yo/fIssJ5TWCo7eJ2qDEP9x8YBE5Ca5AAAAArPT+vfSFtQJ7phe9eOhpGWbL0aS1kdTDxTh7SggrzGECZGneOiPtQr7SJA0oRgrO9gaX9KiGqPA2L08Al/s/ZA==" Result="[passwd]" />
+    <ui:MultipleAssign DisplayName="ASSIGNING VARIBLES FOR AWS COMPREHEND CONNECTION" sap:VirtualizedContainerService.HintSize="608,191" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[AccessKey]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">AKIAXIYJUO4HDRSPSZXT</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="a:RegionEndpoint">[Region]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="a:RegionEndpoint">[Amazon.RegionEndpoint.APSoutheast2]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="ss:SecureString">[Password]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="ss:SecureString">[new System.Net.NetworkCredential(string.Empty, passwd).SecurePassword]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="s:String[]">[file_cases]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles("C:\Users\User\Documents\UiPath\sun\medical_cases")]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+    </ui:MultipleAssign>
+    <uaa:AmazonComprehendScopeActivity DesignConnectionRequest="{x:Null}" ExistingConnection="{x:Null}" SelectedDesignAuthType="{x:Null}" SwaggerClient="{x:Null}" Connection="[Connection]" DesignConnectionEnabled="False" DisplayName="Amazon Comprehend Scope" ExistingConnectionType="uam:AmazonComprehendConnection" sap:VirtualizedContainerService.HintSize="608,2830" sap2010:WorkflowViewState.IdRef="AmazonComprehendScopeActivity_1" RefreshCacheEnabled="False" SelectedAuthType="AmazonComprehend" TelemetryEnabled="False" ThrowExceptionOnError="False">
+      <uaa:AmazonComprehendScopeActivity.Body>
+        <ActivityAction x:TypeArguments="ubac:ScopeActivityContext">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ubac:ScopeActivityContext" Name="ScopeActivityContext" />
+          </ActivityAction.Argument>
+          <Sequence sap:VirtualizedContainerService.HintSize="574,2629" sap2010:WorkflowViewState.IdRef="Sequence_11">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="532,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Warn" Message="[&quot;Connecting with AWS COMPREHEND SERVICES----&quot;+Connection.Success.ToString]" />
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="532,2406" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="acm:InferICD10CMResponse" Name="InferCD10CM_Result" />
+                <Variable x:TypeArguments="x:String" Name="file_output" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:ReadTextFile Content="[file_output]" DisplayName="Read Text File MEDICAL CASE FILE" FileName="[file_cases(0)]" sap:VirtualizedContainerService.HintSize="490,79" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="490,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;medical case file Name ----&quot;+file_cases(0)]" />
+              <uaam:InferICD10CM BusinessEntityName="{x:Null}" ScopeActivityType="{x:Null}" Status="{x:Null}" ConfiguredBusinessEntity="InferICD10CM" CrudOperation="Function" DesignConnectionEnabled="False" DisplayName="Infer ICD10CM" sap:VirtualizedContainerService.HintSize="490,170" sap2010:WorkflowViewState.IdRef="InferICD10CM_1">
+                <uaam:InferICD10CM.BusinessEntity>
+                  <ubme:BusinessEntity AuthFields="{x:Null}" Connection="{x:Null}" Id="{x:Null}" Name="InferICD10CM">
+                    <ubme:BusinessEntity.AllFields>
+                      <scg:List x:TypeArguments="ubme:EntityField" Capacity="0" />
+                    </ubme:BusinessEntity.AllFields>
+                    <ubme:BusinessEntity.EntityMetadata>
+                      <ubme:EntityMetadata Description="{x:Null}" Metadata="{x:Reference __ReferenceID0}" EligibleOperations="-1" IsCustomEntity="False" Name="InferICD10CM" />
+                    </ubme:BusinessEntity.EntityMetadata>
+                    <ubme:BusinessEntity.Metadata>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object" x:Name="__ReferenceID0">
+                        <x:Type Type="ac:IAmazonComprehendMedical" x:Key="Client" />
+                      </scg:Dictionary>
+                    </ubme:BusinessEntity.Metadata>
+                    <ubme:BusinessEntity.SelectedFields>
+                      <scg:List x:TypeArguments="ubme:EntityField" Capacity="0" />
+                    </ubme:BusinessEntity.SelectedFields>
+                    <ubme:BusinessEntity.TelemetryProperties>
+                      <scg:Dictionary x:TypeArguments="ubt:TelemetryGroup, scg:IDictionary(x:String, x:String)" />
+                    </ubme:BusinessEntity.TelemetryProperties>
+                  </ubme:BusinessEntity>
+                </uaam:InferICD10CM.BusinessEntity>
+                <uaam:InferICD10CM.PopulatedAPIParameters>
+                  <scg:Dictionary x:TypeArguments="x:String, ubme:EntityField" />
+                </uaam:InferICD10CM.PopulatedAPIParameters>
+                <uaam:InferICD10CM.SelectedFields>
+                  <scg:List x:TypeArguments="ubme:EntityField" Capacity="4">
+                    <ucm:CodeGenEntityField x:TypeArguments="x:String" ContainingType="{x:Null}" DefaultValue="{x:Null}" FieldFullName="{x:Null}" InOutArgumentValue="{x:Null}" Metadata="{x:Null}" OriginalArgumentType="{x:Null}" OutArgumentValue="{x:Null}" SampleValue="{x:Null}" Value="{x:Null}" ArgumentDirection="In" ArgumentType="x:String" DataType="String" Description="The input text used for analysis. The input for InferICD10CM is a string from 1 to 10000 characters." DisplayName="Text" FieldName="Text" FormDataType="ExpressionTextBox" InArgumentValue="[file_output]" IsCustomField="False" IsDefault="False" IsDeletable="True" IsIdField="False" IsSelected="False" Mandatory="True" ShouldFilterOnChange="False">
+                      <ucm:CodeGenEntityField.ArgumentValue>
+                        <InArgument x:TypeArguments="x:String">[file_output]</InArgument>
+                      </ucm:CodeGenEntityField.ArgumentValue>
+                    </ucm:CodeGenEntityField>
+                    <ucm:CodeGenEntityField x:TypeArguments="acm:InferICD10CMResponse" ContainingType="{x:Null}" DefaultValue="{x:Null}" FieldFullName="{x:Null}" InArgumentValue="{x:Null}" InOutArgumentValue="{x:Null}" Metadata="{x:Null}" OriginalArgumentType="{x:Null}" SampleValue="{x:Null}" Value="{x:Null}" ArgumentDirection="Out" ArgumentType="acm:InferICD10CMResponse" DataType="InferICD10CMResponse" Description="Response object from the InferICD10CM operation." DisplayName="InferICD10CMResponse" FieldName="InferICD10CMResponse" FormDataType="ExpressionTextBox" IsCustomField="False" IsDefault="False" IsDeletable="True" IsIdField="False" IsSelected="False" Mandatory="False" OutArgumentValue="[InferCD10CM_Result]" ShouldFilterOnChange="False">
+                      <ucm:CodeGenEntityField.ArgumentValue>
+                        <OutArgument x:TypeArguments="acm:InferICD10CMResponse">[InferCD10CM_Result]</OutArgument>
+                      </ucm:CodeGenEntityField.ArgumentValue>
+                    </ucm:CodeGenEntityField>
+                  </scg:List>
+                </uaam:InferICD10CM.SelectedFields>
+                <uaam:InferICD10CM.ServiceFactory>
+                  <uas:AmazonComprehendServiceFactory />
+                </uaam:InferICD10CM.ServiceFactory>
+                <uaam:InferICD10CM.TelemetryProperties>
+                  <scg:Dictionary x:TypeArguments="ubt:TelemetryGroup, scg:IDictionary(x:String, x:String)" />
+                </uaam:InferICD10CM.TelemetryProperties>
+              </uaam:InferICD10CM>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="490,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;Getting medical case output ----&quot;+InferCD10CM_Result.ModelVersion]" />
+              <ui:BuildDataTable DataTable="[dt]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="490,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_3" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;EntitesName&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;ConceptDESC&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;InferCdCODE&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;traitName&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;TraitScore&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:BuildDataTable>
+              <ui:ForEach x:TypeArguments="acm:ICD10CMEntity" CurrentIndex="{x:Null}" DisplayName="For Each---Getting each inferCD10CM ENTITIES" sap:VirtualizedContainerService.HintSize="490,1207" sap2010:WorkflowViewState.IdRef="ForEach`1_12" Values="[InferCD10CM_Result.Entities]">
+                <ui:ForEach.Body>
+                  <ActivityAction x:TypeArguments="acm:ICD10CMEntity">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="acm:ICD10CMEntity" Name="Entities" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="454,1073" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="x:String" Name="entityName" />
+                      </Sequence.Variables>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:MultipleAssign DisplayName="Multiple Assign---ASSIGNING ENTITIES VARIABLES" sap:VirtualizedContainerService.HintSize="412,129" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+                        <ui:MultipleAssign.AssignOperations>
+                          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+                              <ui:AssignOperation.To>
+                                <OutArgument x:TypeArguments="x:String">[id]</OutArgument>
+                              </ui:AssignOperation.To>
+                              <ui:AssignOperation.Value>
+                                <InArgument x:TypeArguments="x:String">[Entities.Id.ToString]</InArgument>
+                              </ui:AssignOperation.Value>
+                            </ui:AssignOperation>
+                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
+                              <ui:AssignOperation.To>
+                                <OutArgument x:TypeArguments="x:String">[entityName]</OutArgument>
+                              </ui:AssignOperation.To>
+                              <ui:AssignOperation.Value>
+                                <InArgument x:TypeArguments="x:String">[Entities.Text]</InArgument>
+                              </ui:AssignOperation.Value>
+                            </ui:AssignOperation>
+                          </scg:List>
+                        </ui:MultipleAssign.AssignOperations>
+                      </ui:MultipleAssign>
+                      <ui:ForEach x:TypeArguments="acm:ICD10CMTrait" CurrentIndex="{x:Null}" DisplayName="For Each----GETTING TRAITS" sap:VirtualizedContainerService.HintSize="412,355" sap2010:WorkflowViewState.IdRef="ForEach`1_16" Values="[Entities.Traits]">
+                        <ui:ForEach.Body>
+                          <ActivityAction x:TypeArguments="acm:ICD10CMTrait">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="acm:ICD10CMTrait" Name="Traits" />
+                            </ActivityAction.Argument>
+                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,221" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:MultipleAssign DisplayName="Multiple Assign---ASSIGNING TRAIT VARIABLES" sap:VirtualizedContainerService.HintSize="334,129" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+                                <ui:MultipleAssign.AssignOperations>
+                                  <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[traitName]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">[Traits.Name]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[traitScore]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">[Traits.Score.ToString]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                  </scg:List>
+                                </ui:MultipleAssign.AssignOperations>
+                              </ui:MultipleAssign>
+                            </Sequence>
+                          </ActivityAction>
+                        </ui:ForEach.Body>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:ForEach>
+                      <ui:ForEach x:TypeArguments="acm:ICD10CMConcept" CurrentIndex="{x:Null}" DisplayName="For Each----GETTING ICD10CM COCEPTS" sap:VirtualizedContainerService.HintSize="412,417" sap2010:WorkflowViewState.IdRef="ForEach`1_14" Values="[Entities.ICD10CMConcepts]">
+                        <ui:ForEach.Body>
+                          <ActivityAction x:TypeArguments="acm:ICD10CMConcept">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="acm:ICD10CMConcept" Name="Concepts" />
+                            </ActivityAction.Argument>
+                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,283" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                              <Sequence.Variables>
+                                <Variable x:TypeArguments="x:String" Name="conceptDescription" />
+                                <Variable x:TypeArguments="x:String" Name="conceptCode" />
+                              </Sequence.Variables>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:MultipleAssign DisplayName="Multiple Assign----ASSIGNING CONCEPTS VARIBLES" sap:VirtualizedContainerService.HintSize="334,129" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
+                                <ui:MultipleAssign.AssignOperations>
+                                  <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[conceptDescription]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">[Concepts.Description]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_11">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[conceptCode]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">[Concepts.Code]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                  </scg:List>
+                                </ui:MultipleAssign.AssignOperations>
+                              </ui:MultipleAssign>
+                              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{entityName,conceptDescription,conceptCode,traitName,traitScore}]" DataTable="[dt]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                            </Sequence>
+                          </ActivityAction>
+                        </ui:ForEach.Body>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:ForEach>
+                    </Sequence>
+                  </ActivityAction>
+                </ui:ForEach.Body>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:ForEach>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="490,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[&quot;Added  records in datatable  ----&quot; +id]" />
+              <ui:WriteRange AddHeaders="True" DataTable="[dt]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="490,115" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" StartingCell="A1" WorkbookPath="RTT.xlsx">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:WriteRange>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="490,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Trace" Message="[&quot;successfully added records  EXCEL SHEET--END&quot;]" />
+            </Sequence>
+          </Sequence>
+        </ActivityAction>
+      </uaa:AmazonComprehendScopeActivity.Body>
+      <uaa:AmazonComprehendScopeActivity.ConnectionParameters>
+        <scg:List x:TypeArguments="ucmc:ConnectionParam" Capacity="4">
+          <ucmc:ConnectionParam Value="{x:Null}" ArgumentDirection="In" ArgumentType="x:String" Description="AWS access key" Mandatory="True" Name="Access Key">
+            <ucmc:ConnectionParam.ArgumentValue>
+              <InArgument x:TypeArguments="x:String">[AccessKey]</InArgument>
+            </ucmc:ConnectionParam.ArgumentValue>
+          </ucmc:ConnectionParam>
+          <ucmc:ConnectionParam Value="{x:Null}" ArgumentDirection="In" ArgumentType="ss:SecureString" Description="AWS secret" Mandatory="True" Name="Secret">
+            <ucmc:ConnectionParam.ArgumentValue>
+              <InArgument x:TypeArguments="ss:SecureString">[Password]</InArgument>
+            </ucmc:ConnectionParam.ArgumentValue>
+          </ucmc:ConnectionParam>
+          <ucmc:ConnectionParam Value="{x:Null}" ArgumentDirection="In" ArgumentType="a:RegionEndpoint" Description="AWS Region" Mandatory="True" Name="Region">
+            <ucmc:ConnectionParam.ArgumentValue>
+              <InArgument x:TypeArguments="a:RegionEndpoint">[Region]</InArgument>
+            </ucmc:ConnectionParam.ArgumentValue>
+          </ucmc:ConnectionParam>
+        </scg:List>
+      </uaa:AmazonComprehendScopeActivity.ConnectionParameters>
+      <uaa:AmazonComprehendScopeActivity.DesignConnectionParameters>
+        <scg:List x:TypeArguments="ucmc:ConnectionParam" Capacity="0" />
+      </uaa:AmazonComprehendScopeActivity.DesignConnectionParameters>
+      <uaa:AmazonComprehendScopeActivity.ServiceFactory>
+        <uas:AmazonComprehendServiceFactory />
+      </uaa:AmazonComprehendScopeActivity.ServiceFactory>
+      <uaa:AmazonComprehendScopeActivity.SupportedAuthTypes>
+        <scg:List x:TypeArguments="x:String" Capacity="4">
+          <x:String>Existing Connection</x:String>
+          <x:String>AmazonComprehend</x:String>
+        </scg:List>
+      </uaa:AmazonComprehendScopeActivity.SupportedAuthTypes>
+      <uaa:AmazonComprehendScopeActivity.TelemetryProperties>
+        <scg:Dictionary x:TypeArguments="ubt:TelemetryGroup, scg:IDictionary(x:String, x:String)" />
+      </uaa:AmazonComprehendScopeActivity.TelemetryProperties>
+    </uaa:AmazonComprehendScopeActivity>
+  </Sequence>
+</Activity>
